@@ -31,7 +31,7 @@ func sendResponse(w http.ResponseWriter, r *http.Request) {
     return
   }
 
-  fmt.Fprintf(w, "%d + %d = %d", a, b, sum(a,b))
+  fmt.Fprintf(w, "%d + %d = %d", a, b, sumValues(a,b))
 }
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
     log.Fatal(http.ListenAndServe(":7000", nil))
 }
 
-func sum (a, b int) int {
+func sumValues(a, b int) int {
   t := b + a
   return t
 }
